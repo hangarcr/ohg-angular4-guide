@@ -1,0 +1,36 @@
+<form class="team-add-form form-horizontal" (ngSubmit)="addTeam(f)" #f="ngForm" >
+  <fieldset>
+    <legend>Template Driven Form</legend>
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name" class="col-lg-3 control-label">Name</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" id="name" placeholder="Team's Name" name="name" #name="ngModel" ngModel required>
+        <p class="form-error" *ngIf="!name.valid && name.touched">The field team's name is required!</p>
+      </div>
+    </div>
+    <!-- Championships -->
+    <div class="form-group">
+      <label for="championships" class="col-lg-3 control-label">Championships</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" id="championships" placeholder="Team's Championships" name="championships" #championships="ngModel" ngModel required pattern="^[1-9]+[0-9]*$">
+        <p class="form-error" *ngIf="!championships.valid && championships.touched">The field team's championships is required and should be a number!</p>
+      </div>
+    </div>
+    <!-- Year -->
+    <div class="form-group">
+      <label for="year" class="col-lg-3 control-label">Year</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" id="year" placeholder="Team's Foundation" name="year" #year="ngModel" ngModel required pattern="^[1-9]+[0-9]*$">
+        <p class="form-error" *ngIf="!year.valid && year.touched">The field team's year is required and should be a number!</p>
+      </div>
+    </div>
+    <!-- Buttons -->
+    <div class="form-group">
+      <div class="col-lg-9 col-lg-offset-3">
+        <button type="reset" class="btn btn-danger" (click)="clearForm(f)">Clear</button>
+        <button type="submit" class="btn btn-success" [disabled]="f.invalid">Add</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

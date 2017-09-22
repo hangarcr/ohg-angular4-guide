@@ -1,0 +1,62 @@
+<div *ngIf="team" class="team-info">
+    <div 
+        panel-coloring
+        panelType="panel-info"
+        class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Team's Name</h3>
+        </div>
+        <div class="panel-body">
+            {{ team.name }}
+        </div>
+    </div>
+
+    <div 
+        panel-coloring
+        panelType="panel-success"
+        class="panel">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">Team's Championships</h3>
+        </div>
+        <div class="panel-body">
+            {{ team.championships }}
+        </div>
+
+    </div>
+
+    <div 
+        panel-coloring
+        panelType="panel-danger"
+        class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Team's Foundation</h3>
+        </div>
+        <div class="panel-body">
+            {{ team.year }}
+        </div>
+    </div>
+
+    <div 
+        panel-coloring
+        panelType="panel-warning"
+        class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Team's Age</h3>
+        </div>
+        <div class="panel-body">
+            {{ team.year | calculateAge }}
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!team">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">Important</h3>
+        </div>
+        <div class="panel-body">
+            Please select one team
+        </div>
+    </div>
+</div>

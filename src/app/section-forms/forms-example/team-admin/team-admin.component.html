@@ -1,0 +1,11 @@
+<div class="team-list-wrapper team-list-admin">
+    <input class="form-control" type="text" placeholder="Search" [(ngModel)]="filterTeam" />
+    <ul class="team-list">
+        <li 
+            class="team"
+            *ngFor="let team of teams | searchFilter:filterTeam:'name'; let i = index;">
+                {{ team.name }}
+                <span (click)="deleteTeam(i)" class="delete-icon">X</span>
+        </li>
+    </ul>
+</div>

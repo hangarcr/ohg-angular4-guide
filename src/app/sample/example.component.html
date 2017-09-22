@@ -1,0 +1,36 @@
+<div class="example-container">
+    <div class="row section">
+        <h2>One way binding</h2>
+        <p>Employees: {{ employees }}</p>
+    </div>
+    
+    <div class="row section">
+        <h2>Two way binding</h2>
+        <input class="form-control" type="text" placeholder="Search" [(ngModel)]="name" />
+        <p>Entrerprise's name: <b>{{ name }}</b></p>
+    </div>
+
+    <div class="row section">
+        <h2>Location (Input param)</h2>
+        <p>{{ location }}</p>
+    </div>
+
+    <div class="row section">
+        <button class="btn btn-success" (click)="print()">Print</button>
+    </div>
+
+    <div class="row section">
+        <button class="btn btn-success" (click)="send()">Send</button>
+    </div>    
+
+    <div class="row section">
+        <h2>Directives</h2>
+        <ul>
+            <li 
+                *ngFor="let enterprise of enterprises"                                
+            >
+                <p [ngClass]="{ 'green': enterprise.employees > 100 }">Enterprise: {{ enterprise.name }}, Employees: {{ enterprise.employees }}, Location: {{ enterprise.location }} <span *ngIf="enterprise.isCurrent">,is Current Enterprise!</span></p>
+            </li>
+        </ul>
+    </div>    
+</div>

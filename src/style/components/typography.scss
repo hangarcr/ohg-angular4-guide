@@ -1,0 +1,48 @@
+.typo-component {
+
+    .typo-section {
+        margin: 20px 0;
+    }
+
+    .typo-header,
+    .subheader {
+        font-weight: 500;
+        line-height: 1.2;
+        color: #317eac;
+    }
+
+    .typo-header {        
+        font-size: 36px;
+    }
+
+    .subheader {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555555;
+    }
+
+    .typo-description {
+        font-size: 21px;
+        font-weight: 300;
+        line-height: 1.4;
+    }
+
+    .typo-list {
+        margin-top: 10px;
+        &.instructions {
+            list-style: decimal;
+        }
+    }
+
+    .typo-item {
+        margin: 5px 0;
+        span {
+            font-weight: bold;
+        }
+    }
+
+}

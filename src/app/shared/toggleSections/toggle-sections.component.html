@@ -1,0 +1,6 @@
+<button 
+    (click)="toggleSection()" 
+    class="btn toggle-section"
+    [ngClass]="{ 'btn-success': !isExample, 'btn-info': isExample }">
+    {{ btnText }}
+</button>

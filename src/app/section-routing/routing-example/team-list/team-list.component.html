@@ -1,0 +1,10 @@
+<div class="team-list-wrapper">
+    <h2>TEAMS:</h2>
+    <ul class="team-list" *ngIf="teams">
+        <li 
+            class="team" 
+            (click)="selectTeam(team)" 
+            [ngClass]="{'active': team.name == activeTeam.name}"
+            *ngFor="let team of teams">{{ team.name }}</li>
+    </ul>
+</div>

@@ -1,0 +1,36 @@
+<form class="team-add-form  form-horizontal" [formGroup]="teamForm" (ngSubmit)="addTeam()">
+  <fieldset>
+    <legend>Template Reactive Form</legend>
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name" class="col-lg-3 control-label">Name</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" id="name" placeholder="Team's Name" formControlName="name">
+         <p class="form-error" *ngIf="teamForm.get('name').invalid && teamForm.get('name').touched">The field team's name is required!</p> 
+      </div>
+    </div>
+    <!-- Championships -->
+    <div class="form-group">
+      <label for="championships" class="col-lg-3 control-label">Championships</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" id="championships" placeholder="Team's Championships" formControlName="championships">
+          <p class="form-error" *ngIf="teamForm.get('championships').invalid && teamForm.get('championships').touched">The field team's championships is required and should be a number!</p>  
+      </div>
+    </div>
+    <!-- Year -->
+    <div class="form-group">
+      <label for="year" class="col-lg-3 control-label">Year</label>
+      <div class="col-lg-9">
+        <input type="text" class="form-control" id="year" placeholder="Team's Foundation" formControlName="year">
+          <p class="form-error" *ngIf="teamForm.get('year').invalid && teamForm.get('year').touched">The field team's year is required and should be a number!</p>  
+      </div>
+    </div>
+    <!-- Buttons -->
+    <div class="form-group">
+      <div class="col-lg-9 col-lg-offset-3">
+        <button type="reset" class="btn btn-danger" (click)="clearForm()">Clear</button>
+        <button type="submit" class="btn btn-success" [disabled]="teamForm.invalid">Add</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

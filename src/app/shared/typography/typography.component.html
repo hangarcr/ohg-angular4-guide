@@ -1,0 +1,39 @@
+<div class="typo-component">
+
+    <!-- Section Header -->
+    <div class="typo-section">
+        <h1 class="typo-header">{{ description.title }}</h1>
+        <p class="typo-description" [innerHTML]="description.description"></p>
+    </div>    
+
+    <!-- Section Decorator -->
+    <div *ngIf="description.decorator" class="typo-section">
+        <h2 class="subheader">Decorator</h2>
+        <ul class="typo-list">
+            <li *ngFor="let item of description.decorator" class="typo-item">
+                <p><span>{{ item.title }}:</span> {{ item.description }}</p>            
+            </li>
+        </ul>
+    </div>
+
+    <!-- Custom Section -->
+    <div *ngFor="let custom of description.custom" class="typo-section">
+        <h2 class="subheader">{{ custom.title }}</h2>
+        <ul class="typo-list">
+            <li *ngFor="let item of custom.features" class="typo-item">
+                <p><span>{{ item.title }}</span> {{ item.description }}</p>            
+            </li>
+        </ul>
+    </div>
+
+    <!-- Instructions Section -->
+    <div class="typo-section" *ngIf="description.instructions">
+        <h2 class="subheader">Instructions</h2>
+        <ul class="typo-list instructions">
+            <li *ngFor="let instruction of description.instructions" class="typo-item">
+                <p>{{ instruction }}</p>
+            </li>
+        </ul>
+    </div>
+
+</div>

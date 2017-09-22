@@ -1,0 +1,20 @@
+<div>
+    <ul class="nav nav-pills">
+        <li routerLinkActive="active"><a routerLink="teams/myParam">Teams</a></li>
+        <li routerLinkActive="active"><a routerLink="admin">Admin</a></li>
+        <li style="margin-left: 100px;">
+            <button class="btn" 
+                (click)="toggleAdmin()"
+                [ngClass]="{
+                    'btn-success': teamSvc.isAdmin,
+                    'btn-danger': !teamSvc.isAdmin
+                }">
+                    {{ btnText }}
+            </button>
+        </li>
+    </ul>
+</div>
+
+<div class="team-wrapper">  
+  <router-outlet></router-outlet>
+</div>

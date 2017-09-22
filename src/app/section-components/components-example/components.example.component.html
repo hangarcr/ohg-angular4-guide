@@ -1,0 +1,12 @@
+<div class="team-wrapper">
+  <div class="row">
+    <!-- Team List Component -->
+    <div class="team-list-container col-sm-6">
+      <app-team-list [teams]="teams" (selectedTeam)="selectedTeam($event)"></app-team-list>
+    </div>
+    <!-- Team Detial Component -->
+    <div class="team-list-container col-sm-6">
+      <app-team-detail [team]="team"></app-team-detail>
+    </div>
+  </div>
+</div>

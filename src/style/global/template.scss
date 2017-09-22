@@ -1,0 +1,30 @@
+.app-wrapper {
+    .row {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container,
+    .view-component-container {
+        padding: 0;
+    }
+
+    .view-component-container {
+        height: 100vh;
+        overflow: auto;
+        padding: 75px;
+    }
+
+    h1, h2, h3, p {
+        margin: 0;
+    }
+
+    .toggle-section {
+        font-weight: bold;
+        position: absolute;
+        min-width: 150px;
+        top: 5%;
+        right: 5%;
+        font-size: 16px;
+    }
+}
